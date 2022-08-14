@@ -1,0 +1,47 @@
+{% extends 'layout.html' %}
+{% block title_block %}
+HOME
+{% endblock %}
+{% block body_block %}
+<style>
+    #wrap{
+        top: 50%;
+        left: 50%;
+        position: absolute;
+        margin-top: -200px;
+        margin-left: -250px;
+        border: 8px solid rgb(0, 0, 0);
+        background: rgb(212, 232, 247);
+        width: 500px;
+        height: 400px;
+        text-align:center;
+    }
+</style>
+<script>
+function myFunction() {
+    var v = document.getElementById("myInput");
+    v.select();
+    navigator.clipboard.writeText(v.value);
+  }
+</script>
+<div id="wrap">
+<h1>SHORTEN URL(s)</h1>
+<hr color="black">
+<br><br><br><br>
+<form action="{{url_for('home')}}" method="POST">
+    <label >Enter URL: </label>
+    <input type="text" placeholder="Enter URL" name="in" size="50px" required>
+    <br><br>
+    <button style="color:red;" type="submit">Shorten URL</button>
+</form>
+{% if err==1 %}
+    <div class="alert alert-danger" role="alert" style="position:fixed; left: 0px; width: 100%;">
+        Please enter a valid Site URL!
+    </div>
+{% elif err==0 %}
+<br>    
+<span style="color: Red;">Shorten URL: </span><a href=http://127.0.0.1:5000/{{furl}}><input width="30px" type="text" value="http://127.0.0.1:5000/{{furl}}" id="myInput" readonly></a>
+<button onclick="myFunction()">Copy URL</button>
+{% endif %}
+{% endblock %}
+</div>

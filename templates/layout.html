@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        {% block title_block %}
+
+        {% endblock %}
+    </title>
+    <style>
+        body {
+            background-image: url('https://bitly.com/blog/wp-content/uploads/2017/08/Q119_Marketing_social_2_0124.png');
+            background-attachment: fixed;
+            background-position: center;
+        }
+        nav{
+            background: rgb(216, 230, 252); 
+            padding: 10px; 
+            text-align: center; 
+            font-size:16px;
+        }
+    </style>
+</head>
+<body>
+    <div style="border: 8px solid rgb(0, 0, 0);">
+    <nav style="border: antiquewhite; size: 0vmax;">
+        <a style="color:red;margin-right:20px; font-size: x-large;" href="{{url_for('home')}}">Home</a>
+        <a style="color:red;margin-right:20px; font-size: x-large;" href="{{url_for('history')}}">History</a>    
+    </nav>
+    </div>
+    {% block body_block %}
+
+    {% endblock %}
+</body>
+</html>

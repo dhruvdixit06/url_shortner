@@ -1,0 +1,33 @@
+{% extends 'layout.html' %}
+{% block title_block %}
+HISTORY
+{% endblock %}
+{% block body_block %}
+<style>
+    #wrap{
+        top:100px;
+        position: absolute;
+        border: 6px solid rgb(0, 0, 0);
+        background: rgb(212, 232, 247);
+        width:80%;
+        margin-left: 140px;
+        text-align:center;
+    }
+</style>
+<div id="wrap">
+<h1><u>History of All Created Urls</u></h1>
+<hr color="black">
+<table border="5px" align="center" style="width:99%">
+    <tr>
+        <th>Full Url</th>
+        <th>Shorten Url</th>
+    </tr>
+    {% for i in content %}
+    <tr>
+        <td><a href={{i.full_url}}>{{i.full_url}}</a></td>
+        <td><a href=http://127.0.0.1:5000/{{i.shorten_url}}>http://127.0.0.1:5000/{{i.shorten_url}}</a></td>
+    </tr>
+{% endfor %}
+</table>
+</div>
+{% endblock %}
