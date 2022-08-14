@@ -14,7 +14,7 @@ Sometimes we need to share or send links and this can be tiresome and annoying t
 
 ## D. Front-End Information: 
 -> The front-end consists of 2 web pages: 
-Home Page - A page will be shown where the user can enter the URL he/she wants to shorten. After the ‘shorten’ button is clicked, the shortened URL is displayed in the text-field which the user can copy using the copy button. 
+Home Page - A page will be shown where the user can enter the URL he/she wants to shorten. After the ‘shorten’ button is clicked, the shortened URL is displayed in the text-field which the user can copy using the copy button.<br />
 History Page - Containing all the Original URLs along with the Shortened URLs. 
 
 ## E. Project Workflow 
